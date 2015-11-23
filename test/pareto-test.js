@@ -10,9 +10,10 @@ require("./inDelta");
 
 var mathRandom = Math.random;
 
+//Testing pareto mean:
 tape.test("pareto(xm, alpha) returns random numbers with a ", function(test) {
-  Math.seedrandom("");
-  // TODO: Test pareto mean
+  Math.seedrandom("746122293b0a0a76");
+  test.inDelta(arrays.mean(arrays.range(10000).map(random.pareto(5, 2))), 10, .05);
   test.end();
 });
 
