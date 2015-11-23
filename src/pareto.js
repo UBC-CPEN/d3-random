@@ -1,6 +1,5 @@
 export default function(xm, alpha) {
   return function() {
-    // TODO: Implement pareto distribution
-    return 0;
+    return 1 / Math.pow(Math.random(), 1 / alpha);
   };
 };
