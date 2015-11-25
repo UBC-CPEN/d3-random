@@ -7,13 +7,18 @@ var tape = require("tape"),
 
 require("seedrandom");
 require("./inDelta");
+require("./greaterThan");
 
 var mathRandom = Math.random;
 
-//Testing pareto mean:
+// Testing pareto mean:
 tape.test("pareto(xm, alpha) returns random numbers with a ", function(test) {
   Math.seedrandom("746122293b0a0a76");
   test.inDelta(arrays.mean(arrays.range(10000).map(random.pareto(5, 2))), 10, 1);
+  // Verify that the mean is Infinity - a really big number.
+  // So 1e30 suffices as a lower bound.
+  test.greaterThan(arrays.mean(arrays.range(10000).map(random.pareto(5, 0.1))),
+                   1e30);
   test.end();
 });
 
