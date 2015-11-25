@@ -26,6 +26,9 @@ tape.test("pareto(xm, alpha) returns random numbers with a ", function(test) {
 tape.test("pareto(xm, alpha) returns random numbers with a ", function(test) {
   Math.seedrandom("746122293b0a0a76");
   test.inDelta(arrays.variance(arrays.range(10000).map(random.pareto(2, 5))), 5/12, .5);
+  // Verify that the variance is Infinity - a really big number.
+  // So 1e10 suffices as a lower bound.
+  test.greaterThan(arrays.variance(arrays.range(10000).map(random.pareto(2, 0.5))), 1e10);
   test.end();
 });
 
