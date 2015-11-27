@@ -51,9 +51,10 @@ tape.test("pareto(xm, alpha) returns random numbers with a Kurtosis of", functio
 	var kurtosisExpected = function( a ){
 		return 6*(Math.pow(a,3)+Math.pow(a,2)-6*a-2)/(a*(a-2)*(a-4));
 	}
-	
-	test.inDelta(kurtosis(arrays.range(10000).map(random.pareto(135,5))), kurtosisExpected(5), .05);
-  test.inDelta(kurtosis(arrays.range(10000).map(random.pareto(170,6))),kurtosisExpected(6), .05);
+	test.inDelta(kurtosis(arrays.range(10000).map(random.pareto(10,100000))),kurtosisExpected(100000), .05);
+	Math.seedrandom("bb0bb479g446ff65");
+	test.inDelta(kurtosis(arrays.range(10000).map(random.pareto(1,1000000))), kurtosisExpected(100000), .05);
+  
   test.end();
 });
 

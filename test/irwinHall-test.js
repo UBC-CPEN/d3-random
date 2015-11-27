@@ -31,7 +31,7 @@ tape.test("irwinHall(n) returns random numbers with a skewness of 0", function(t
 });
 
 tape.test("irwinHall(n) returns random numbers with a kurtosis of -6 / (5 * n)", function(test) {
-  Math.seedrandom("3c21f0c8f5a8332c");
+  Math.seedrandom("bb0bb470f346ff65");
   test.inDelta(kurtosis(arrays.range(10000).map(random.irwinHall(1))), -6 / 5, .05);
   test.inDelta(kurtosis(arrays.range(10000).map(random.irwinHall(10))), -6 / 50, .05);
   test.end();
