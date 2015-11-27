@@ -39,8 +39,14 @@ Returns a function for generating random numbers with an [Irwin–Hall distribut
 
 Returns a function for generating random numbers with an [exponential distribution](https://en.wikipedia.org/wiki/Exponential_distribution) with the rate *lambda*; equivalent to time between events in a [Poisson process](https://en.wikipedia.org/wiki/Poisson_point_process) with a mean of 1 / *lambda*. For example, exponential(1/40) generates random times between events where, on average, one event occurs every 40 units of time.
 
+<a name="pareto" href="#pareto">#</a> <b>pareto</b>(<i>xm, alpha</i>)
+
+Returns a function for generating random numbers with a [pareto distribution](https://en.wikipedia.org/wiki/Pareto_distribution) with a shape of *xm* and the a tail index of *alpha*.
+
 ## Changes from D3 3.x:
 
 * Added a [uniform](#uniform) random number generator.
 
 * Added an [exponential](#exponential) random number generator.
+
+* Added a [pareto](#pareto) random number generator.
