@@ -1,4 +1,7 @@
-We added a pareto distrubution random number generator
+In this repo, we want to fix issue #1 from https://github.com/d3/d3-random.
+As part of our project, we also contributed to https://github.com/d3/d3-arrays,
+the implementation for that contribution is in https://github.com/UBC-CPEN/d3-arrays
+which we also shared with you.
 
 - Added file src/pareto.js which contains the actual implementation of the pareto
   generator function.
